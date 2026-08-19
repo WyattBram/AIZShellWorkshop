@@ -1,10 +1,13 @@
 # Demo script — 02-documentation
 
 **Prompt (same on both sides, run with permissions granted so it can actually edit):**
-> Add a cancel_task(task_id) function to storage.py and api.py, following the existing style. Make the change directly.
+> Add a way to cancel a task. You decide whether it should remove the task entirely or just mark it cancelled. Make the change directly.
 
-**Before (00-broken, no CLAUDE.md):** makes the edit, no docstrings on the new functions, and closes with a terse "done" — no explanation of what changed or why beyond the code itself.
+**Before (00-broken, no CLAUDE.md):** the repo already has `documents/ARCHITECTURE.md`, `CHANGELOG.md`, and `DECISIONS.md` sitting there, prefilled. The model makes a real, reasonable code change — but doesn't touch any of them. Nothing told it those files are its job to keep current.
 
-**After (this branch):** same edit, but both new functions get a one-line docstring, and the response ends with a short summary of what changed, in which files, and why.
+**After (this branch):** same prompt, same reasonable choice (mark cancelled, don't delete), but now:
+- `documents/ARCHITECTURE.md` gets the new field/function added to the file descriptions.
+- `documents/CHANGELOG.md` gets a new dated entry, without touching the existing "Initial" entry.
+- `documents/DECISIONS.md` gets a real entry explaining *why* cancel marks instead of deletes (mirrors the existing `done`-doesn't-delete precedent already written there).
 
-**Point to make:** documentation isn't just about the code — it's also about the assistant's own accountability for what it did. "Document what you did" applies to the AI's actions in your session, not only to the functions it writes.
+**Point to make:** these documents existed the whole time — the gap wasn't "no docs," it was "no one told the assistant when to use them." Documentation isn't one blanket rule ("write docs"), it's specific triggers pointing at specific files: this happened, so write it here.

@@ -1,5 +1,9 @@
 # Documentation
 
-- Every new function and class gets a one-line docstring stating what it does. Only add an inline comment on top of that for the *why* when it's non-obvious (a workaround, an invariant).
-- After making any code change, end your response with a short summary: what changed, in which files, and why — not a restatement of the diff, the reasoning behind it.
-- Don't write a README or module-level doc unless asked. Undocumented-but-working code is not a defect by default.
+This project keeps its own history in `documents/`. Naming and code-comment style are covered elsewhere — this is about project-level records, not code style.
+
+- **When you add, remove, or change the purpose of a file** — update `documents/ARCHITECTURE.md` so the file tree and the one-line description of each file stay accurate.
+- **After making any code change** — append an entry to `documents/CHANGELOG.md` describing what changed and why. Don't touch older entries.
+- **When you make a non-obvious tradeoff** — pick one approach over another for a real reason, not the only option available — add an entry to `documents/DECISIONS.md` explaining the choice and why the alternative was rejected. Routine changes with an obvious "only way to do it" don't need an entry.
+
+If none of the above applies to a change, don't touch `documents/` just to have touched it.
