@@ -1,3 +1,5 @@
+"""Project-wide configuration values."""
+
 import os
 
 # Default cap on tasks per store. Overridable for load testing.

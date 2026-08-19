@@ -1,7 +1,10 @@
+"""Tests for the app.api module."""
+
 from app.api import create_task, get_task
 
 
 def test_create_and_get():
+    """A created task can be fetched back by id with a 200 status."""
     created = create_task("write slides")
     task, status = get_task(created["id"])
     assert status == 200

@@ -1,0 +1,20 @@
+[flake8]
+max-line-length = 80
+select =
+    E501,
+    E2,
+    E3,
+    E7,
+    W1,
+    W2,
+    W3,
+    N8,
+    D100,
+    D101,
+    D102,
+    D103,
+    D104,
+    D105,
+    D106,
+    D107
+docstring-convention = pep257
