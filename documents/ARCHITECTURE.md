@@ -20,6 +20,7 @@ documents/
   ARCHITECTURE.md This file.
   CHANGELOG.md    Running log of code changes.
   DECISIONS.md    Log of non-obvious tradeoffs and why they were made.
+  INDEX.md        Compact lookup table: topic/question -> which file to check.
 ```
 
 Not a real service: no persistence (data is lost on restart) and no web
