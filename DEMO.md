@@ -27,3 +27,19 @@ documents/
 **Why `documentation.md` points at specific files instead of "write docs":** the documents already existed and were prefilled from day one — the gap was never "no docs," it was "no trigger telling the assistant when a doc needs updating." Four files, four distinct triggers: structure changed → ARCHITECTURE, anything changed → CHANGELOG, a real tradeoff got made → DECISIONS, something new got added → INDEX.
 
 **The takeaway for the room:** every one of these files answers the same question — "what would a good, careful teammate already know before touching this code?" A CLAUDE.md is just that knowledge, written down once, instead of re-explained every session.
+
+## Closing demo: one prompt, everything at once
+
+A fresh ask, not reused from any earlier stage (grant edit permission live):
+
+> Add a way to search tasks by title. There are multiple reasonable ways to match (exact, prefix, substring, fuzzy) with different tradeoffs — pick one and go with it. Make the change directly.
+
+In one response, this genuinely produces all four guardrails firing together:
+
+- `flake8 app tests` — clean, exit 0.
+- `documents/CHANGELOG.md` — a new entry, old ones untouched.
+- `documents/ARCHITECTURE.md` — updated to mention the new function.
+- `documents/DECISIONS.md` — a real, reasoned entry explaining *why* substring match was chosen over exact/prefix/fuzzy, including correctly declining a fuzzy-match dependency this teaching repo has no other reason to carry.
+- `tests/test_api.py` — a real test, `pytest` actually run, pass count reported.
+
+Nothing here was staged or guaranteed — it's the same open-ended kind of ask from the live break at the start, on the same model. The only thing that changed in between is what's written down.

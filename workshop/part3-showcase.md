@@ -27,8 +27,13 @@
 
 6. Point out `coding-standards.md`'s linter link specifically — it's the one guardrail in this workshop with an objective, automatable pass/fail check instead of a judgment call. *"When you can turn a standard into a tool that says yes or no, do that."*
 
-7. **The line to land:** *"This is what a strong, mindful-AI solution looks like — safe, accountable, repeatable, and trustworthy. Not because the model is smarter here than it was on `00-broken` — it's the same model. Because someone wrote down what 'good' means for this project, once, instead of leaving it to be re-guessed every session."*
+7. **Closing demo — one fresh prompt, everything at once** (grant edit permission live):
+   > Add a way to search tasks by title. There are multiple reasonable ways to match (exact, prefix, substring, fuzzy) with different tradeoffs — pick one and go with it. Make the change directly.
 
-8. **Direct hackathon tie-in:** *"When judges open your repo in two hours, a CLAUDE.md like this is one of the fastest signals you can give that your team worked like a real engineering team, not just shipped a demo. Copy this pattern into your own repo tonight — five minutes, and every AI-assisted commit after that inherits it."*
+   This is a brand new ask, not reused from any earlier stage. Watch all four guardrails fire in one response: `flake8` comes back clean, `documents/CHANGELOG.md` gets a new entry, `documents/ARCHITECTURE.md` gets updated, `documents/DECISIONS.md` gets a real, reasoned entry on *why* substring match won over the alternatives (including correctly turning down a fuzzy-match dependency this repo has no other reason to carry), and a real test gets written with `pytest` actually run. *"Same open-ended kind of ask as the live break at the start. Same model. The only thing different is what's written down."*
 
-9. Close with the takeaway, stated plainly: *"You leave with a hardened AI assistant you built yourself, a mental model for four guardrail patterns — coding standards, documentation, testing, and giving the model a fast way to find things before it starts guessing — and a concrete picture, from this reference solution, of what a polished, trustworthy AI-assisted project looks like. Go build."*
+8. **The line to land:** *"This is what a strong, mindful-AI solution looks like — safe, accountable, repeatable, and trustworthy. Not because the model is smarter here than it was on `00-broken` — it's the same model. Because someone wrote down what 'good' means for this project, once, instead of leaving it to be re-guessed every session."*
+
+9. **Direct hackathon tie-in:** *"When judges open your repo in two hours, a CLAUDE.md like this is one of the fastest signals you can give that your team worked like a real engineering team, not just shipped a demo. Copy this pattern into your own repo tonight — five minutes, and every AI-assisted commit after that inherits it."*
+
+10. Close with the takeaway, stated plainly: *"You leave with a hardened AI assistant you built yourself, a mental model for four guardrail patterns — coding standards, documentation, testing, and giving the model a fast way to find things before it starts guessing — and a concrete picture, from this reference solution, of what a polished, trustworthy AI-assisted project looks like. Go build."*
