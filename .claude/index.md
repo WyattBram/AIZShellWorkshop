@@ -1,0 +1,5 @@
+# Project index
+
+Before doing anything else in this project, read `documents/INDEX.md`. It's a compact lookup table — topic or question, mapped to which file actually has the answer — not a full description of anything. Use it to go straight to the right file instead of opening files one at a time to find it.
+
+Keep `documents/INDEX.md` current: when a new document, module, or major concern gets added, add a row pointing at it.

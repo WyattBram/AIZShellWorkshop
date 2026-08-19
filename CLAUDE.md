@@ -1,5 +1,8 @@
-# Project index
+# TaskTracker — assistant brain
 
-Before doing anything else in this project, read `documents/INDEX.md`. It's a compact lookup table — topic or question, mapped to which file actually has the answer — not a full description of anything. Use it to go straight to the right file instead of opening files one at a time to find it.
+This project's guidance is split by topic so each piece stays short and easy to maintain. Read all of it before acting.
 
-Keep `documents/INDEX.md` current: when a new document, module, or major concern gets added, add a row pointing at it.
+@.claude/index.md
+@.claude/coding-standards.md
+@.claude/documentation.md
+@.claude/testing.md
