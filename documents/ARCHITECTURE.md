@@ -21,6 +21,10 @@ documents/
   CHANGELOG.md    Running log of code changes.
   DECISIONS.md    Log of non-obvious tradeoffs and why they were made.
   INDEX.md        Compact lookup table: topic/question -> which file to check.
+
+other-tools/
+  copilot/        The same 4 patterns ported to .github/copilot-instructions.md.
+  cursor/         The same 4 patterns ported to .cursor/rules/*.mdc.
 ```
 
 Not a real service: no persistence (data is lost on restart) and no web

@@ -14,5 +14,6 @@ Quick lookup — where to find something, without opening files to check.
 | Task fields (`done`, `due`, `tags`, etc.)  | `app/models.py`                 |
 | All CRUD operations on tasks                | `app/storage.py`                |
 | The public functions other code calls      | `app/api.py`                    |
+| The same rules ported for Copilot/Cursor   | `other-tools/`                  |
 
 Keep this table current: when a new document, module, or major concern gets added, add a row here pointing at it.
