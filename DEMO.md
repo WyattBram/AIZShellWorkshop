@@ -31,3 +31,5 @@ Exit code 0 — clean pass.
 **If it fails:** tell Claude "flake8 reported these violations: [paste output], fix them," then run `flake8 app tests` again. This is the actual guardrail loop — a written standard plus an objective, automatable check, not just a nicer-sounding answer.
 
 **Point to make:** this isn't a vibe check anymore — it's a pass/fail signal from a real tool. Nobody told the model to write a bad line; a normal, moderately complex feature request, described the way a real teammate would describe it, produced several anyway — more surface area, more chances for something to slip. CLAUDE.md doesn't have to convince the model your standards matter more, it just has to state them clearly enough that the model applies them even at scale, when nobody's watching that closely.
+
+**Not on Claude Code?** `other-tools/` has this same coding-standards content ported to `.github/copilot-instructions.md` (Copilot) and `.cursor/rules/coding-standards.mdc` (Cursor) — copy whichever matches your stack.
