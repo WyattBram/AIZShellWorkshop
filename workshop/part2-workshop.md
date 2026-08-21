@@ -19,7 +19,7 @@ Before the session: `pip install -r requirements-dev.txt` once, so `flake8` is r
 For each stage: `git checkout 0X-stage-name`, start a **fresh** Claude Code session, open `CLAUDE.md`, read it together, then run that stage's `DEMO.md` prompt and compare to what the room just saw on `00-broken`.
 
 1. **`01-coding-standards`** — full PEP8 rule set (naming, spacing, line length, docstrings), enforced by `flake8`.
-   Prompt uses a deliberately bad camelCase name (`getOverdueTasks`). On `00-broken`, `flake8 app tests` fails with two `N802` violations. On this branch, the function gets renamed to snake_case and `flake8` passes clean. *"This isn't a vibe check anymore — it's a pass/fail signal from a real tool."*
+   Prompt bakes in three violations at once (a camelCase function name, a camelCase local variable, and a long literal string it's told not to shorten), so the fail doesn't depend on the model missing just one thing. On `00-broken`, `flake8 app tests` fails on all three rule types (`N802`, `N806`, `E501`). On this branch, all three get fixed to match the standard and `flake8` passes clean. *"This isn't a vibe check anymore — it's a pass/fail signal from a real tool."*
 
 2. **`02-documentation`** — trigger rules for `documents/ARCHITECTURE.md`, `CHANGELOG.md`, `DECISIONS.md`.
    Same "cancel a task" prompt as the live break. Now the model's choice gets a real entry in `DECISIONS.md` explaining why, `CHANGELOG.md` gets a new dated entry without touching the old one, and `ARCHITECTURE.md`'s file descriptions stay accurate. *"The documents existed the whole time. The gap was never 'no docs' — it was 'no one said when to use them.'"*
