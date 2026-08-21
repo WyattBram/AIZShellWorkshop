@@ -1,10 +1,12 @@
 # Demo script — 03-testing
 
 **Prompt (same on both sides, run with permissions granted so it can actually edit):**
-> Add a cancel_task(task_id) function to storage.py and api.py.
+> Add a cancel_task(task_id) function to storage.py and api.py. It should handle a task that doesn't exist, and a task that's already been cancelled, sensibly. Make the change directly.
 
-**Before (00-broken, no CLAUDE.md):** makes the edit, no new test added, reports "done" on the strength of the code alone.
+Naming two edge cases in the ask (not-found, already-cancelled) gives the feature enough real branches that "one test" would obviously be incomplete — a bigger gap for the testing rule to close.
 
-**After (this branch):** same edit, but adds two real tests — the happy path and the missing-id case — and actually runs `pytest`, reporting "3 passed" instead of just asserting the change works.
+**Before (00-broken, no CLAUDE.md):** makes the edit — a real `KeyError`/404 for the missing task, a real `ValueError`/409 for the already-cancelled one — and reports "done" on the strength of the code alone. `tests/test_api.py` is untouched; still just the original one test.
 
-**Point to make:** "add a function" doesn't imply "and prove it works" unless you say so. A testing section turns an assumption into a requirement, and turns "should pass" into an actual, checkable pass count.
+**After (this branch):** same edit, same two edge cases handled the same way, but now three new tests — happy path, not-found, already-cancelled — get written, `pytest` actually runs, and "4 passed" gets reported instead of just asserting the change works.
+
+**Point to make:** "add a function" doesn't imply "and prove it works" unless you say so — and it definitely doesn't imply "prove every branch works." A testing section turns an assumption into a requirement, and turns "should pass" into an actual, checkable pass count that scales with however many cases the feature actually has.
