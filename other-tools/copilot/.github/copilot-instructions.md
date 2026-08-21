@@ -1,0 +1,15 @@
+# TaskTracker — Copilot instructions (stage: documentation)
+
+Copy this file into `.github/copilot-instructions.md` at the root of your repo (create the `.github/` directory if it doesn't exist). Copilot reads it automatically for every chat response, inline completion, and PR review in this repo.
+
+Same content as this branch's `CLAUDE.md`, ported to Copilot's format.
+
+# Documentation
+
+This project keeps its own history in `documents/`. Naming and code-comment style are covered elsewhere — this is about project-level records, not code style.
+
+- **When you add, remove, or change the purpose of a file** — update `documents/ARCHITECTURE.md` so the file tree and the one-line description of each file stay accurate.
+- **After making any code change** — append an entry to `documents/CHANGELOG.md` describing what changed and why. Don't touch older entries.
+- **When you make a non-obvious tradeoff** — pick one approach over another for a real reason, not the only option available — add an entry to `documents/DECISIONS.md` explaining the choice and why the alternative was rejected. Routine changes with an obvious "only way to do it" don't need an entry.
+
+If none of the above applies to a change, don't touch `documents/` just to have touched it.

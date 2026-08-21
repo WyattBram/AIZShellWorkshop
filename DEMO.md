@@ -13,3 +13,5 @@ This is a bigger, multi-part feature on purpose — a new field, several new fun
 - `documents/DECISIONS.md` gets a genuine new entry explaining why archived tasks don't count toward the `MAX_TASKS` cap, and why the alternative (counting them) would create unnecessary friction.
 
 **Point to make:** these documents existed the whole time, and the model's reasoning was just as good without the rule — it explained its choices out loud either way. The gap was never "the model doesn't think about tradeoffs," it was "nothing told it where that thinking is supposed to end up." A bigger feature makes a bigger gap between what got reasoned about and what got written down — until something points at the files.
+
+**Not on Claude Code?** `other-tools/` has this same documentation content ported to `.github/copilot-instructions.md` (Copilot) and `.cursor/rules/documentation.mdc` (Cursor) — copy whichever matches your stack.
