@@ -15,10 +15,16 @@ claude -p --output-format stream-json --verbose "<prompt>" 2>&1 | grep -o '"name
 
 **Point to make:** every `Read` call pulls that file's full content into context — permanently, for the rest of the session. Fewer reads doesn't just mean a faster answer once, it means the context window fills up slower for everything that comes after. `ARCHITECTURE.md` and `INDEX.md` do different jobs: `ARCHITECTURE.md` is an artifact Claude *writes to* — documentation, output, something a human or a future session reads to understand the project, and it grows as the project grows. `INDEX.md` is something Claude both *reads and writes* — a working lookup table it consults first and keeps current, not a description but a pointer, so it stays small and cheap no matter how big the project gets. That's the trade a good index makes: pay a small, fixed context cost up front so every session after it spends less context rediscovering the same map.
 
-claude -p --output-format json "Without editing anything: if I wanted to add a due-date reminder feature, which files would I need to edit? Just tell me the plan." > result.json
+**Optional — cost and duration too:**
+
+```
+claude -p --output-format json "<prompt>" > result.json
 python -c "
 import json
 d = json.load(open('result.json'))
 print('total_cost_usd:', d['total_cost_usd'])
 print('duration_ms:', d['duration_ms'])
 "
+```
+
+**Not on Claude Code?** `other-tools/` has this same index content ported to `.github/copilot-instructions.md` (Copilot) and `.cursor/rules/index.mdc` (Cursor) — copy whichever matches your stack. The tool-call measurement itself is Claude Code-specific, but the pattern (point at a compact lookup table before exploring) applies wherever your tool reads a persistent instructions file.
