@@ -10,3 +10,5 @@ Naming two edge cases in the ask (not-found, already-cancelled) gives the featur
 **After (this branch):** same edit, same two edge cases handled the same way, but now three new tests — happy path, not-found, already-cancelled — get written, `pytest` actually runs, and "4 passed" gets reported instead of just asserting the change works.
 
 **Point to make:** "add a function" doesn't imply "and prove it works" unless you say so — and it definitely doesn't imply "prove every branch works." A testing section turns an assumption into a requirement, and turns "should pass" into an actual, checkable pass count that scales with however many cases the feature actually has.
+
+**Not on Claude Code?** `other-tools/` has this same testing content ported to `.github/copilot-instructions.md` (Copilot) and `.cursor/rules/testing.mdc` (Cursor) — copy whichever matches your stack.
