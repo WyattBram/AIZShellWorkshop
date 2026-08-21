@@ -1,13 +1,15 @@
 # Demo script — 02-documentation
 
 **Prompt (same on both sides, run with permissions granted so it can actually edit):**
-> Add a way to cancel a task. You decide whether it should remove the task entirely or just mark it cancelled. Make the change directly.
+> Add a task archiving feature: users should be able to archive a task instead of just completing or deleting it, archived tasks should be excluded from the normal task list but still queryable separately, and there should be a way to restore an archived task back to active. You decide the details — whether archiving is a flag or a separate store, how restore should work, and whether archived tasks should still count toward the MAX_TASKS cap. Wire it up across models.py, storage.py, and api.py. Make the change directly.
 
-**Before (00-broken, no CLAUDE.md):** the repo already has `documents/ARCHITECTURE.md`, `CHANGELOG.md`, and `DECISIONS.md` sitting there, prefilled. The model makes a real, reasonable code change — but doesn't touch any of them. Nothing told it those files are its job to keep current.
+This is a bigger, multi-part feature on purpose — a new field, several new functions across three files, and at least one genuine design tradeoff (does archiving still count toward the task cap?). More surface area means more for the documentation rules to actually catch.
 
-**After (this branch):** same prompt, same reasonable choice (mark cancelled, don't delete), but now:
-- `documents/ARCHITECTURE.md` gets the new field/function added to the file descriptions.
-- `documents/CHANGELOG.md` gets a new dated entry, without touching the existing "Initial" entry.
-- `documents/DECISIONS.md` gets a real entry explaining *why* cancel marks instead of deletes (mirrors the existing `done`-doesn't-delete precedent already written there).
+**Before (00-broken, no CLAUDE.md):** the repo already has `documents/ARCHITECTURE.md`, `CHANGELOG.md`, and `DECISIONS.md` sitting there, prefilled. The model makes a real, well-reasoned code change — new `archived` field, `archive()`/`restore()`/`archived()` on `TaskStore`, three new API functions, a real decision about the `MAX_TASKS` cap — and even states its reasoning in the response. But `git status` afterward shows only the `app/` files changed. All three documents sit untouched.
 
-**Point to make:** these documents existed the whole time — the gap wasn't "no docs," it was "no one told the assistant when to use them." Documentation isn't one blanket rule ("write docs"), it's specific triggers pointing at specific files: this happened, so write it here.
+**After (this branch):** same prompt, same feature, but now:
+- `documents/ARCHITECTURE.md` gets three of its four file descriptions rewritten to mention the new field and functions.
+- `documents/CHANGELOG.md` gets a real dated entry with multiple bullet points, without touching the existing "Initial" entry.
+- `documents/DECISIONS.md` gets a genuine new entry explaining why archived tasks don't count toward the `MAX_TASKS` cap, and why the alternative (counting them) would create unnecessary friction.
+
+**Point to make:** these documents existed the whole time, and the model's reasoning was just as good without the rule — it explained its choices out loud either way. The gap was never "the model doesn't think about tradeoffs," it was "nothing told it where that thinking is supposed to end up." A bigger feature makes a bigger gap between what got reasoned about and what got written down — until something points at the files.
