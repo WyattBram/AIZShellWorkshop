@@ -13,7 +13,7 @@ Asks Claude, read-only, which files it would need to edit to add a due-date remi
 - **`duration_ms`** — wall-clock time for the run; reflects tool-call round trips plus generation time.
 
 ```
-claude -p --output-format stream-json --verbose "<prompt>" 2>&1 | tee result.jsonl | grep -o '"name":"Read"' | wc -l
+claude -p --output-format stream-json --verbose "Without editing anything: if I wanted to add a due-date reminder feature, which files would I need to edit? Just tell me the plan." 2>&1 | tee result.jsonl | grep -o '"name":"Read"' | wc -l
 
 python -c "
 import json
