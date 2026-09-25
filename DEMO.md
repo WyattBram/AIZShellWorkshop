@@ -3,6 +3,9 @@
 **Setup:** `pip install -r requirements-dev.txt` (installs `flake8`, `pep8-naming`, `flake8-docstrings`). The `.flake8` config in the repo root scopes the linter to exactly this project's standards: naming, indentation/blank-lines, spacing, 80-char line length, and docstring presence.
 
 **Prompt :**
+
+It's asking Claude to build a weekly manager status report that summarizes overdue, upcoming, and completed tasks
+
 > We want a weekly status report feature for managers. It should look across all tasks and produce a summary covering three things: how many tasks are overdue and not done, how many are due in the next 3 days, and how many were completed this week. For each of those three groups include a short natural-language sentence describing the situation, written the way you'd actually explain it to a busy manager who just wants the gist, plus the raw counts and task titles for anyone who wants detail. Also include an overall urgency label (something like low, medium, or high) based on how bad the overdue count looks compared to the total number of open tasks. Wire the whole thing up across storage.py and api.py, adding whatever helper functions you need. Make the change directly.
 
 **Before (00-broken, no CLAUDE.md):** builds the whole feature correctly (new field, urgency logic, three-part summary), but several of the natural-language sentences and the urgency-logic lines end up over 80 characters. Run `flake8 app tests`:
