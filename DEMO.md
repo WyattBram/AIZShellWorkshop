@@ -1,4 +1,4 @@
-# Demo script — 03-testing
+# Demo — 03-testing
 
 **Prompt (same on both sides, run with permissions granted so it can actually edit):**
 > Add a cancel_task(task_id) function to storage.py and api.py. It should handle a task that doesn't exist, and a task that's already been cancelled, sensibly. Make the change directly.
