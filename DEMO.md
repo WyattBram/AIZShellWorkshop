@@ -1,4 +1,4 @@
-# Demo script — 04-index
+# Demo — 04-index
 
 **Prompt (same on both sides, read-only):**
 > Without editing anything: if I wanted to add a due-date reminder feature, which files would I need to edit? Just tell me the plan.
