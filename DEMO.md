@@ -1,6 +1,9 @@
 # Demo — 04-index
 
-**Prompt (same on both sides, read-only):**
+**Prompt:**
+
+Asks Claude, read-only, which files it would need to edit to add a due-date reminder feature
+
 > Without editing anything: if I wanted to add a due-date reminder feature, which files would I need to edit? Just tell me the plan.
 
 **Measure tool calls, not turns** — turn count is noisy, `Read` count is stable. This one run gives you:
