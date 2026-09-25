@@ -1,6 +1,9 @@
 # Demo 02-documentation
 
 **Prompt :**
+
+Asks Claude to add task archiving
+
 > Add a task archiving feature: users should be able to archive a task instead of just completing or deleting it, archived tasks should be excluded from the normal task list but still queryable separately, and there should be a way to restore an archived task back to active. You decide the details — whether archiving is a flag or a separate store, how restore should work, and whether archived tasks should still count toward the MAX_TASKS cap. Wire it up across models.py, storage.py, and api.py. Make the change directly.
 
 This is a bigger, multi-part feature on purpose — a new field, several new functions across three files, and at least one genuine design tradeoff (does archiving still count toward the task cap?). More surface area means more for the documentation rules to actually catch.
