@@ -1,14 +1,14 @@
 # Coding standards
 
-This project follows PEP 8. Checked by `flake8` (config in `.flake8`) — run `flake8 app tests` after any change and fix anything it reports before calling a change done.
+This project follows PEP 8. Checked by `flake8` (config in `.flake8`); run `flake8 app tests` after any change and fix anything it reports before calling a change done.
 
 ## Naming
 
-- **Function / method / variable:** lowercase, words separated by underscores (snake_case) — `my_function`, `car_color`. A single lowercase letter is fine for a loop/math variable inside a function (`i`, `j`).
-- **Constant:** uppercase, words separated by underscores — `MY_CONSTANT`.
-- **Class:** capitalize each word, no underscores (PascalCase) — `CarModel`.
-- **Module:** short, lowercase, underscores if needed — `my_module.py`.
-- **Package:** short, lowercase, no underscores — `mypackage`.
+- **Function / method / variable:** lowercase, words separated by underscores (snake_case), e.g. `my_function`, `car_color`. A single lowercase letter is fine for a loop/math variable inside a function (`i`, `j`).
+- **Constant:** uppercase, words separated by underscores, e.g. `MY_CONSTANT`.
+- **Class:** capitalize each word, no underscores (PascalCase), e.g. `CarModel`.
+- **Module:** short, lowercase, underscores if needed, e.g. `my_module.py`.
+- **Package:** short, lowercase, no underscores, e.g. `mypackage`.
 
 ## Layout
 
@@ -27,5 +27,5 @@ This project follows PEP 8. Checked by `flake8` (config in `.flake8`) — run `f
 
 - Every public function, class, and method gets a docstring, starting and ending with `"""`.
 - A one-line docstring can be on a single line; a multi-line docstring lists each argument on its own line and has a blank line before the closing `"""`.
-- Write comments as whole sentences in plain English. Keep them accurate — an outdated comment is worse than none.
+- Write comments as whole sentences in plain English. Keep them accurate; an outdated comment is worse than none.
 - Block comments: each line starts with `#`; separate paragraphs with a line containing a single `#`. Use inline comments sparingly, never to restate the obvious.
