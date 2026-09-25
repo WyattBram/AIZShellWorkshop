@@ -1,4 +1,4 @@
-# Demo script: 01-coding-standards
+# Demo: 01-coding-standards
 
 **Setup:** `pip install -r requirements-dev.txt` (installs `flake8`, `pep8-naming`, `flake8-docstrings`). The `.flake8` config in the repo root scopes the linter to exactly this project's standards: naming, indentation/blank-lines, spacing, 80-char line length, and docstring presence.
 
